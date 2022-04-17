@@ -1,5 +1,5 @@
-import background from "../src/images/bg-galaxy.jpg"
-import jojoBodhiCodeLogo from "../src/images/jojoBodhiCodeLogo.png"
+import background from "../src/images/bg-galaxy.jpg";
+import jojoBodhiCodeLogo from "../src/images/jojoBodhiCodeLogo.png";
 
 export default function Home() {
   return (
@@ -21,19 +21,23 @@ export default function Home() {
             max-width: 75%;
           }
           
-          .bg-001219 {
-            background-color: #001219;
+          .bg-212529 {
+            background-color: #212529;
           }
 
           .text-shadow {
-            text-shadow: 2px 2px #ff0000;
+            text-shadow: #000 1px 0 10px;
+          }
+
+          .opacity-75-percent {
+            opacity: 75%;
           }
           `}
       </style>
       <div className="page-wrapper bg-galaxy w-100 h-vh-100">
         <div className="w-100 d-flex">
           <img
-            className="img-fluid w-100 max-w-75-percent p-5 mx-auto"
+            className="img-fluid w-100 max-w-75-percent p-3 mx-auto"
             src={jojoBodhiCodeLogo.src}
             alt="jojoBodhiCodeLogo"
           />
@@ -44,9 +48,20 @@ export default function Home() {
             <strong>jojoBodhiCode</strong>
           </h1>
         </div>
-
-        <div className="main-body-wrapper bg-001219w-100"></div>
+        <div className="d-flex flex-column align-items-center pb-3 mx-3">
+          <audio
+            className="rounded opacity-75-percent w-100"
+            src="/interstellar-communication.mp3"
+            controls
+          >
+            Your browser does not support the
+            <code>audio</code> element.
+          </audio>
+        </div>
+        <div className="main-body-wrapper bg-212529 opacity-75-percent mx-3 rounded p-3 text-white">
+          hello
+        </div>
       </div>
     </>
-  )
+  );
 }
