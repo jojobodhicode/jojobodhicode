@@ -23,16 +23,28 @@ export default function Home() {
             max-width: 75%;
           }
           
-          .bg-212529 {
-            background-color: #212529;
+          .bg-000 {
+            background-color: rgba(0, 0, 0, 0.75);
           }
 
           .text-shadow {
             text-shadow: #000 1px 0 10px;
           }
 
-          .opacity-75-percent {
-            opacity: 75%;
+          .accordion-item {
+            background-color: rgba(0, 0, 0, 0);
+            border: 1px solid rgba(0, 0, 0, 0.125);
+            opacity: 100%;
+          }
+
+          .accordion-button:not(.collapsed) {
+            color: #212529;
+            background-color: #e7f1ff;
+            box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
+          }
+
+          .accordion-button:focus {
+            border-color: #e489f1;
           }
           `}
       </style>
@@ -52,7 +64,7 @@ export default function Home() {
         </div>
         <div className="d-flex flex-column align-items-center pb-3 mx-3">
           <audio
-            className="rounded opacity-75-percent w-100"
+            className="rounded w-100"
             src="/interstellar-communication.mp3"
             controls
           >
@@ -60,7 +72,7 @@ export default function Home() {
             <code>audio</code> element.
           </audio>
         </div>
-        <div className="main-body-wrapper bg-212529 opacity-75-percent mx-3 rounded p-3 text-white d-flex flex-column">
+        <div className="main-body-wrapper bg-000 mx-3 rounded p-3 text-white d-flex flex-column">
           <Accordion defaultActiveKey="0">
             <Accordion.Item eventKey="0">
               <Accordion.Header>Profile</Accordion.Header>
@@ -74,6 +86,7 @@ export default function Home() {
                 sunt in culpa qui officia deserunt mollit anim id est laborum.
               </Accordion.Body>
             </Accordion.Item>
+
             <Accordion.Item eventKey="1">
               <Accordion.Header>Experience</Accordion.Header>
               <Accordion.Body>
@@ -86,6 +99,7 @@ export default function Home() {
                 sunt in culpa qui officia deserunt mollit anim id est laborum.
               </Accordion.Body>
             </Accordion.Item>
+
             <Accordion.Item eventKey="2">
               <Accordion.Header>Education</Accordion.Header>
               <Accordion.Body>
@@ -98,6 +112,7 @@ export default function Home() {
                 sunt in culpa qui officia deserunt mollit anim id est laborum.
               </Accordion.Body>
             </Accordion.Item>
+
             <Accordion.Item eventKey="3">
               <Accordion.Header>Contact</Accordion.Header>
               <Accordion.Body>
