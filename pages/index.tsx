@@ -23,8 +23,8 @@ export default function Home() {
             max-width: 75%;
           }
           
-          .bg-000 {
-            background-color: rgba(0, 0, 0, 0.75);
+          .bg-dark-grey {
+            background-color: rgba(33, 37, 41, 0.80);
           }
 
           .text-shadow {
@@ -37,14 +37,24 @@ export default function Home() {
             opacity: 100%;
           }
 
+          .accordion-button {
+            background-color: rgba(108, 117, 125, 0.5);
+            color: white;
+          }
+
           .accordion-button:not(.collapsed) {
-            color: #212529;
-            background-color: #e7f1ff;
+            color: white;
+            background-color: rgba(206, 212, 218, 0.5);
             box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
           }
 
           .accordion-button:focus {
-            border-color: #e489f1;
+            border-color: #000;
+            box-shadow: unset;
+          }
+
+          .accordion-button:not(.collapsed)::after {
+            path: rgb(173, 181, 189);
           }
           `}
       </style>
@@ -62,17 +72,7 @@ export default function Home() {
             <strong>jojoBodhiCode</strong>
           </h1>
         </div>
-        <div className="d-flex flex-column align-items-center pb-3 mx-3">
-          <audio
-            className="rounded w-100"
-            src="/interstellar-communication.mp3"
-            controls
-          >
-            Your browser does not support the
-            <code>audio</code> element.
-          </audio>
-        </div>
-        <div className="main-body-wrapper bg-000 mx-3 rounded p-3 text-white d-flex flex-column">
+        <div className="main-body-wrapper bg-dark-grey mx-3 rounded p-3 text-white d-flex flex-column">
           <Accordion defaultActiveKey="0">
             <Accordion.Item eventKey="0">
               <Accordion.Header>Profile</Accordion.Header>
